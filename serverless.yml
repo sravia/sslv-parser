@@ -1,0 +1,27 @@
+service: serverless-sslv-parser
+
+package:
+  excludeDevDependencies: true
+
+plugins:
+  - serverless-dynamodb-local
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: eu-west-2
+  lambdaHashingVersion: 20201221
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - lambda:InvokeFunction
+        - lambda:InvokeAsync
+      Resource: "*"
+
+functions:
+  news:
+    handler: dist/src/handler.handler
+    memorySize: 128
+    timeout: 30
+    events:
+      - schedule: cron(*/5 * ? * * *)
