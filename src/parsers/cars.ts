@@ -9,7 +9,7 @@ export type Car = {
 export const getCars = async (): Promise<Car[]> => {
   const cars: Car[] = [];
   const page = await JSDOM.fromURL("https://www.ss.lv/lv/transport/other/transport-with-defects-or-after-crash");
-  const entries = Array.from(page.window.document.querySelectorAll("#filter_frm > table:nth-child(3) tr"));
+  const entries = [...page.window.document.querySelectorAll("#filter_frm > table:nth-child(3) tr")];
 
   entries.forEach((entry) => {
     if (entry.querySelector("td:nth-child(2) a")) {

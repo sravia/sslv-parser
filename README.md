@@ -1,13 +1,13 @@
-serverless deploy serverless config credentials --provider aws --key XX --secret XX
+```serverless config credentials --provider aws --key XX --secret XX```
 
-root config.json:
+root/src/config.json:
+```
 {
-"accessKeyId": "",
-"secretAccessKey": "",
-"region": "eu-west-2"
+    "accessKeyId": "",
+    "secretAccessKey": "",
+    "region": "eu-west-2",
+    "webhooks": {
+        "cars": "slack channel webhook"
+    }
 }
-
-LOCAL DYNAMODB:
-
-* java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb
-* dynamodb-admin
+```

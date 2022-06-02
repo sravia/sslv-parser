@@ -22,7 +22,7 @@ async function parse(handler: Parser) {
       return notifySlack(handler.webhookURL, handler.resultFormatter(addedResults));
     }
   } catch (e) {
-    console.log("error", e);
+    console.log(e);
     return notifySlack(handler.webhookURL, [`${handler.table} Failed to parse. Check logs`]);
   }
 }
@@ -33,4 +33,3 @@ export const handler = async (): Promise<APIGatewayProxyResult> => {
   }
   return { statusCode: 200, body: "" };
 };
-handler();

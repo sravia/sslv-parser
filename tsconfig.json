@@ -13,8 +13,6 @@
     ],
     "esModuleInterop": true,
     "inlineSourceMap": true,
-    "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    "experimentalDecorators": true
+    "moduleResolution": "node"
   },
 }

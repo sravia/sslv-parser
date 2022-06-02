@@ -1,11 +1,5 @@
 service: serverless-sslv-parser
 
-package:
-  excludeDevDependencies: true
-
-plugins:
-  - serverless-dynamodb-local
-
 provider:
   name: aws
   runtime: nodejs12.x
@@ -19,8 +13,8 @@ provider:
       Resource: "*"
 
 functions:
-  news:
-    handler: dist/src/handler.handler
+  notifier:
+    handler: dist/handler.handler
     memorySize: 128
     timeout: 30
     events:
