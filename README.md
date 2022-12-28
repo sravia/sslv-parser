@@ -11,3 +11,5 @@ root/src/config.json:
     }
 }
 ```
+
+^ Switch to .env file
